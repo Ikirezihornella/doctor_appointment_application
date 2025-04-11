@@ -56,9 +56,8 @@ class _SymptomsDescriptionPageState extends State<SymptomsDescriptionPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LoginPage(
-                  onLoginSuccess: () {
-                    print("Login successful");
-                  },
+                  onLoginSuccess: () {},
+                    redirectToAppointment= true,
                 ),
                 ),
               );

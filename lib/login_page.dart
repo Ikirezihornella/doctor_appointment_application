@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'sign_up.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'appointment_booking.'
 
 class LoginPage extends StatefulWidget {
   final VoidCallback onLoginSuccess;
+  final bool redirectToAppointment;
 
-  LoginPage({required this.onLoginSuccess});
+  LoginPage({
+    required this.onLoginSuccess,
+    this.redirectToAppointment= false,
+    });
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -21,7 +26,12 @@ class _LoginPageState extends State<LoginPage> {
 
     if (email.isNotEmpty && password.isNotEmpty) {
       widget.onLoginSuccess();
+
+      if(widget.redirectToAppointment) {
+        Navigator.pushReplacementNamed(context,'/appointmentBooking');
+      } else {
       Navigator.pop(context);
+      }
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

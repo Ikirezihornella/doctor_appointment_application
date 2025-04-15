@@ -23,13 +23,13 @@ class _AppointmentBookingPageState extends State<AppointmentBookingPage> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context); // close dialog
+              Navigator.pop(context); 
             },
             child: Text('Cancel'),
           ),
           TextButton(
             onPressed: () {
-              Navigator.pop(context); // close dialog
+              Navigator.pop(context); 
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text('Appointment Booked!'),

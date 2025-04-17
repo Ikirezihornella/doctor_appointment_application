@@ -3,6 +3,7 @@ import 'dart:async';
 import 'symptoms_page.dart';
 import 'sign_up.dart';
 import 'login_page.dart';
+import 'appointment_booking.dart'; // Import AppointmentBookingPage
 
 void main() {
   runApp(MyApp());
@@ -32,8 +33,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   late AnimationController _controller;
   final List<String> _imageUrls = [
-    // 'https://t3.ftcdn.net/jpg/04/96/80/34/360_F_496803433_TeCu85tBSH36XkKklQ4Eu6Zc5EbZQgs5.jpg',
-    // 'https://emi.parkview.com/media/Image/Dashboard_835_fear_at_the_doctors_12_23.jpeg',
     'https://t3.ftcdn.net/jpg/10/77/98/48/360_F_1077984897_nnqvXyDHQ0nca0vbnzmczlUFRRDol8Hq.jpg',
   ];
   int _currentImageIndex = 0;
@@ -75,8 +74,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text('Get your consultation & get recommendetions here'),
-        // backgroundColor: Colors.green[280],
+        title: Text('Get your consultation & get recommendations here'),
       ),
       body: Stack(
         children: [
@@ -139,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                         if (_isLoggedIn) {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => AppointmentsPage()),
+                            MaterialPageRoute(builder: (context) => AppointmentBookingPage()),
                           );
                         } else {
                           Navigator.push(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'sign_up.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'appointment_booking.'
+import 'appointment_booking.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback onLoginSuccess;

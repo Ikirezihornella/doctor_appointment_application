@@ -55,10 +55,13 @@ class _SymptomsDescriptionPageState extends State<SymptomsDescriptionPage> {
               Navigator.of(context).pop();
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LoginPage(
-                  onLoginSuccess: () {},
-                    redirectToAppointment= true,
-                ),
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(
+                    onLoginSuccess: () {
+                      print("Logged in and redirecting to appointment...");
+                    },
+                    redirectToAppointment: true,
+                  ),
                 ),
               );
             },

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'symptoms_page.dart';
 import 'sign_up.dart';
 import 'login_page.dart';
-import 'appointment_booking.dart'; // Import AppointmentBookingPage
+import 'appointment_booking.dart'; 
 
 void main() {
   runApp(MyApp());
@@ -34,6 +34,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   late AnimationController _controller;
   final List<String> _imageUrls = [
     'https://t3.ftcdn.net/jpg/10/77/98/48/360_F_1077984897_nnqvXyDHQ0nca0vbnzmczlUFRRDol8Hq.jpg',
+    'https://t3.ftcdn.net/jpg/02/38/08/42/360_F_238084232_5XhGUddDZezzJxybvVXzfPp8cOKAuqRp.jpg',
+    // 'https://static.vecteezy.com/system/resources/thumbnails/004/987/898/small/doctor-in-medical-lab-coat-with-a-stethoscope-doctor-in-hospital-background-with-copy-space-low-poly-wireframe-vector.jpg',
+    'https://t3.ftcdn.net/jpg/05/52/06/54/360_F_552065481_f2v6KugntlxzdMRitcgOh2i5PpiTtFGl.jpg',
   ];
   int _currentImageIndex = 0;
   Timer? _imageTimer;
@@ -74,7 +77,9 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
-        title: Text('Get your consultation & get recommendations here'),
+        title: Text('Get your consultation & get recommendations here',
+         style: TextStyle(fontSize: 16.3 , fontWeight: FontWeight.w500),
+        ),
       ),
       body: Stack(
         children: [
@@ -91,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
             ),
           ),
 
-          // Animated gradient overlay
+          // Animated gradient 
           AnimatedBuilder(
             animation: _controller,
             builder: (context, child) {
@@ -135,10 +140,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
                     ElevatedButton(
                       onPressed: () {
                         if (_isLoggedIn) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => AppointmentBookingPage()),
-                          );
+                          Navigator.pop(context);
                         } else {
                           Navigator.push(
                             context,

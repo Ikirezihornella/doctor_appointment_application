@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'symptom_description.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'dbmodels/symptom_model.dart';
 
 class SymptomsPage extends StatefulWidget {
   @override
